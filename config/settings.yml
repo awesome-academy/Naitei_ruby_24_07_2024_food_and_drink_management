@@ -4,3 +4,4 @@ rails_tutorial_url: "http://www.railstutorial.org/"
 VALID_EMAIL_REGEX : !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 validate_len_name: 50
 validate_len_email: 255
+page_10: 10

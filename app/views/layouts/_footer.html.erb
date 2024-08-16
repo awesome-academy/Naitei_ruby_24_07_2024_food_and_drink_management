@@ -1,30 +1,26 @@
-<footer class="bg-gray-100 py-6 mt-auto">
-  <div class="container  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-    
+<footer class="bg-gray-100 py-8">
+  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
     <!-- Logo and Description -->
-    <div class="flex ">
-      <div class="flex items-center">
+    <div class="">
+      <div class="flex items-center space-x-2 mb-4">
         <%= image_tag 'logo.png', alt: 'Healthy Eat', class: 'w-10 h-10' %>
-        <div class="">
+        <div>
           <h2 class="text-xl font-bold text-green-600">Healthy Eat</h2>
           <p class="text-sm text-gray-700">Chất lượng - Tươi xanh</p>
         </div>
       </div>
-      <p class=" text-sm text-gray-700">
-        Bean Farm - Siêu thị trực tuyến mua sắm nông sản, chất lượng, tươi xanh.
-      </p>
-      <p class=" text-green-600 font-semibold">Giá siêu tốt - Giao siêu tốc.</p>
-      <p class="text-sm text-gray-700">
-        Địa chỉ: 70 Lữ Gia, Phường 15, Quận 11, TP.HCM
-      </p>
-      <p class="text-sm text-gray-700">Điện thoại: 1900 6750</p>
+      <p class="text-sm text-gray-700 mb-2">Bean Farm - Siêu thị trực tuyến mua sắm nông sản, chất lượng, tươi xanh.</p>
+      <p class="text-sm text-green-600 font-semibold mb-2">Giá siêu tốt - Giao siêu tốc.</p>
+      <p class="text-sm text-gray-700 mb-1">Địa chỉ: 70 Lữ Gia, Phường 15, Quận 11, TP.HCM</p>
+      <p class="text-sm text-gray-700 mb-1">Điện thoại: 1900 6750</p>
       <p class="text-sm text-gray-700">Email: support@sapo.vn</p>
     </div>
 
     <!-- Policies -->
-    <div class="flex ">
-      <h3 class="text-lg font-bold text-green-600">CHÍNH SÁCH</h3>
-      <ul class=" text-sm text-gray-700 space-y-2">
+    <div>
+      <h3 class="text-lg font-bold text-green-600 mb-4">CHÍNH SÁCH</h3>
+      <ul class="text-sm text-gray-700 space-y-2">
         <li><a href="#" class="hover:text-green-600">Chính sách thành viên</a></li>
         <li><a href="#" class="hover:text-green-600">Chính sách thanh toán</a></li>
         <li><a href="#" class="hover:text-green-600">Chính sách đổi sản phẩm</a></li>
@@ -35,9 +31,9 @@
     </div>
 
     <!-- Instructions -->
-    <div class="flex ">
-      <h3 class="text-lg font-bold text-green-600">HƯỚNG DẪN</h3>
-      <ul class=" text-sm text-gray-700 space-y-2">
+    <div>
+      <h3 class="text-lg font-bold text-green-600 mb-4">HƯỚNG DẪN</h3>
+      <ul class="text-sm text-gray-700 space-y-2">
         <li><a href="#" class="hover:text-green-600">Hướng dẫn mua hàng</a></li>
         <li><a href="#" class="hover:text-green-600">Hướng dẫn đổi trả</a></li>
         <li><a href="#" class="hover:text-green-600">Hướng dẫn thanh toán</a></li>
@@ -47,23 +43,26 @@
       </ul>
     </div>
 
-    <div class="flex  items-start">
-     <!-- Social Media Section -->
-      <h3 class="text-lg font-bold text-green-600">KẾT NỐI VỚI CHÚNG TÔI</h3>
-      <div class="flex space-x-1 ">
-        <%= link_to image_tag('facebook.jpeg', alt: 'Facebook', class: 'w-6 h-6'), "https://www.facebook.com/linhdinhlhpk97" %>
-        <%= link_to image_tag('youtube.png', alt: 'YouTube', class: 'w-6 h-6'), "https://www.facebook.com/linhdinhlhpk97" %>
-        <%= link_to image_tag('insta.jpeg', alt: 'Instagram', class: 'w-6 h-6'), "https://www.facebook.com/linhdinhlhpk97" %>
-        <%= link_to image_tag('twitter.png', alt: 'Twitter', class: 'w-6 h-6'), "https://www.facebook.com/linhdinhlhpk97" %>
-    </div>
-
-    <!-- Payment Methods Section -->
-      <h3 class=" text-lg font-bold text-green-600">HÌNH THỨC THANH TOÁN</h3>
-      <div class="flex space-x-1 ">
-        <%= image_tag 'payment_1.webp', alt: 'Payment 1', class: 'w-12 h-8' %>
-        <%= image_tag 'payment_2.webp', alt: 'Payment 2', class: 'w-12 h-8' %>
-        <%= image_tag 'payment_4.webp', alt: 'Payment 4', class: 'w-12 h-8' %>
+    <!-- Social Media and Payment Methods -->
+    <div class="space-y-4">
+      <div>
+        <h3 class="text-lg font-bold text-green-600 mb-2">KẾT NỐI VỚI CHÚNG TÔI</h3>
+        <div class="flex space-x-2">
+          <%= link_to image_tag('facebook.jpeg', alt: 'Facebook', class: 'w-8 h-8'), "https://www.facebook.com/linhdinhlhpk97" %>
+          <%= link_to image_tag('youtube.png', alt: 'YouTube', class: 'w-8 h-8'), "https://www.facebook.com/linhdinhlhpk97" %>
+          <%= link_to image_tag('insta.jpeg', alt: 'Instagram', class: 'w-8 h-8'), "https://www.facebook.com/linhdinhlhpk97" %>
+          <%= link_to image_tag('twitter.png', alt: 'Twitter', class: 'w-8 h-8'), "https://www.facebook.com/linhdinhlhpk97" %>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-green-600 mb-2">HÌNH THỨC THANH TOÁN</h3>
+        <div class="flex space-x-2">
+          <%= image_tag 'payment_1.webp', alt: 'Payment 1', class: 'w-12 h-8' %>
+          <%= image_tag 'payment_2.webp', alt: 'Payment 2', class: 'w-12 h-8' %>
+          <%= image_tag 'payment_4.webp', alt: 'Payment 4', class: 'w-12 h-8' %>
+        </div>
       </div>
     </div>
+
   </div>
 </footer>
