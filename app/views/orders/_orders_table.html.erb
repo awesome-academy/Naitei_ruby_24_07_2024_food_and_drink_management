@@ -1,0 +1,40 @@
+<table class="min-w-full bg-white border border-gray-200">
+  <thead>
+    <tr class="bg-gray-100 border-b">
+      <th class="py-2 px-4 text-left"><%= t("orders.table.customer_name") %></th>
+      <th class="py-2 px-4 text-left"><%= t("orders.table.products") %></th>
+      <th class="py-2 px-4 text-left"><%= t("orders.table.total") %></th>
+      <th class="py-2 px-4 text-left"><%= t("orders.table.payment_method") %></th>
+      <th class="py-2 px-4 text-left"><%= t("orders.table.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if orders.empty? %>
+      <tr>
+        <td colspan="6" class="py-4 px-4 text-center text-gray-500"><%= t("orders.table.no_orders_found") %></td>      </tr>
+    <% else %>
+      <% orders.each do |order| %>
+        <tr class="border-t">
+          <td class="py-2 px-4"><%= order.user.username %></td>
+          <td class="py-2 px-4">
+            <ul class="list-disc pl-5">
+              <% order.order_items.each do |item| %>
+                <li>
+                  <%= item.quantity %> x <%= item.product.name %> 
+                  - <%= convert_currency(item.product.price, :vnd) %>
+                </li>
+              <% end %>
+            </ul>
+          </td>
+          <td class="py-2 px-4"><%= convert_currency(order.total_invoice, :vnd) %></td>
+          <td class="py-2 px-4"><%= order.payment_method&.payment_method || "N/A" %></td>
+          <td class="py-2 px-4">
+            <% if order.status == "confirming" %>
+              <%= button_to t("orders.cancel_button"), order_path(order), :method => :delete , data: {turbo_confirm: t("orders.cancel_confirm")}, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
