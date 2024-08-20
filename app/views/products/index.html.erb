@@ -1,10 +1,32 @@
 <% provide :title, "Danh sách sản phẩm" %>
 
 <h1 class="text-3xl font-bold mb-4">Danh sách sản phẩm</h1>
-
+<div class="mb-4">
+  <%= search_form_for @q, url: products_path, method: :get, html: { class: "flex items-center" } do |f| %>
+    <%= f.select :category_name_cont, options_for_select(Category.pluck(:name)), { prompt: "Select Category" }, class: "bg-white border border-gray-300 rounded-full py-2 px-3" %>
+    <button type="submit" class="ml-2 bg-green-600 text-white py-2 px-4 rounded-full">Filter</button>
+  <% end %>
+</div>
 <div class="mb-4">
   <%== pagy_nav(@pagy) %>
 </div>
+
+
+<h1 class="text-3xl font-bold mb-4">Danh sách sản phẩm</h1>
+<div class="mb-4">
+  <%= search_form_for @q, url: products_path, method: :get, html: { class: "flex items-center space-x-4" } do |f| %>
+    
+
+    <%= f.label :price_gteq, "Min Price", class: "sr-only" %>
+    <%= f.number_field :price_gteq, placeholder: "Min Price", class: "w-24 py-2 px-3 border border-gray-300 rounded-full" %>
+    
+    <%= f.label :price_lteq, "Max Price", class: "sr-only" %>
+    <%= f.number_field :price_lteq, placeholder: "Max Price", class: "w-24 py-2 px-3 border border-gray-300 rounded-full" %>
+
+    <button type="submit" class="ml-2 bg-green-600 text-white py-2 px-4 rounded-full">Filter</button>
+  <% end %>
+</div>
+
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   <% @products.each do |product| %>
@@ -28,4 +50,3 @@
 <div class="mt-4 flex justify-center items-center  ">
   <%== pagy_nav(@pagy) %>
 </div>
-
