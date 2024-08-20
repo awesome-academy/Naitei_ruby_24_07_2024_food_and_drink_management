@@ -41,9 +41,9 @@ class OrdersController < ApplicationController
 
   def filter_orders_by_status status
     if current_user.admin?
-      Order.where(status: status)
+      Order.where(status:)
     else
-      current_user.orders.where(status: status)
+      current_user.orders.where(status:)
     end
   end
 end

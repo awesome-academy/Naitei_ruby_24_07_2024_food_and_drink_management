@@ -26,6 +26,7 @@ en:
       new_user: "New user?"
       sign_up_now: "Sign up now"
       rember_me: "Remember me on this computer"
+  vision: "Quality - Fresh"
   orders:
     destroy_notice: "Order successfully deleted."
     cannot_destroy_notice: "Order cannot be deleted unless it is in confirming status."
@@ -44,3 +45,11 @@ en:
       payment_method: "Payment Method"
       actions: "Actions"
       no_orders_found: "No orders found."
+  products:
+    title: "Product List"
+    category_filter: "Select Category"
+    min_price: "Min Price"
+    max_price: "Max Price"
+    filter_button: "Filter"
+  search:
+    placeholder: "Search your favorites..."

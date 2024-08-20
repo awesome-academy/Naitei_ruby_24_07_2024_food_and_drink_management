@@ -27,6 +27,7 @@ vi:
       new_user: "Người dùng mới?"
       sign_up_now: "Đăng kí ngay bây giờ"
       rember_me: "Ghi nhớ mật khẩu cho lần tiếp theo"
+  vision: "Chất lượng - Tươi ngon"
   orders:
     destroy_notice: "Hủy đơn hàng thành công"
     cannot_destroy_notice: "Đơn hàng hủy không thành công trừ khi nó ở trạng thái chưa xác nhận"
@@ -45,3 +46,11 @@ vi:
       payment_method: "Phương Thức Thanh Toán"
       actions: "Hủy Đơn Hàng"
       no_orders_found: "Không tìm thấy đơn hàng nào."
+  products:
+    title: "Danh sách sản phẩm"
+    category_filter: "Chọn Danh Mục"
+    min_price: "Giá Tối Thiểu"
+    max_price: "Giá Tối Đa"
+    filter_button: "Lọc"  
+  search:
+    placeholder: "Tìm kiếm đồ yêu thích..."

@@ -5,11 +5,13 @@ class Product < ApplicationRecord
   has_one :discount, dependent: :destroy
   has_many :reviews, dependent: :destroy, as: :reviewable
 
-  def self.ransackable_attributes(auth_object = nil)
-    %w(name description price category_id quantity_in_stock delivery_quantity)
-  end
+  scope :global_search, lambda {|query|
+    where("name LIKE :query OR description LIKE :query ", query: "%#{query}%")
+  }
 
-  def self.ransackable_associations(auth_object = nil)
-    %w(category)
-  end
+  scope :min_price, ->(price){where("price >= ?", price)}
+
+  scope :max_price, ->(price){where("price <= ?", price)}
+
+  scope :filter_by_category_id, ->(category_id){where categories: category_id}
 end
