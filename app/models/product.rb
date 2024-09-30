@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  # include Elasticsearch::Model
+  # include Elasticsearch::Model::Callbacks
   PRODUCT_PARAMS = [:name, :description,
   :quantity_in_stock, :price_cents, :currency, :category_id, {images: []}]
                    .freeze
@@ -16,6 +18,25 @@ class Product < ApplicationRecord
 
   validates :name, :price_cents, :currency, :quantity_in_stock, :category_id,
             presence: true
+
+  # settings index: {number_of_shards: 1} do
+  #   mappings dynamic: "false" do
+  #     indexes :name, analyzer: "english"
+  #     indexes :description, analyzer: "english"
+  #   end
+  # end
+
+  # def self.search query
+  #   {
+  #     query: {
+  #       multi_match: {
+  #         query:,
+  #         fields: %w(name description),
+  #         fuzziness: "AUTO"
+  #       }
+  #     }
+  #   }
+  # end
 
   scope :order_by_name, ->{order :name}
 

@@ -1,8 +1,7 @@
 class ProductsController < ApplicationController
   authorize_resource
   def index
-    apply_filters
-    paginate_products
+    @products = params[:q].present? ? Product.search(params[:q]) : Product.all
   end
 
   def show
